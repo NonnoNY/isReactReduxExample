@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge from Hack Rank M.Carbone</title>
+
+<script>
+
+challenge();
+
+function challenge() {
+
+    /* Braces/brackets/parentheses validator.  
+      '(', '{', '[' are called "openers."
+      ')', '}', ']' are called "closers."
+            
+      Write an efficient function that tells us whether or not an input string's openers and closers are properly nested.  
+  "{ [ ] ( ) }" should return true
+  "{ [ ( ] ) }" should return false
+  "{ [ }" should return false
+
+  */
+    // true
+    console.log("TRUE");
+    console.log(validate('{}'));
+    console.log(validate('{}[]()'));
+    console.log(validate('[{}]'));
+    console.log(validate('([]{})'));
+    // // False
+    console.log("FALSE");
+    console.log(validate('{[(])}'));
+    console.log(validate('}{}[]()'));
+    console.log(validate('()[{(})]'));
+    console.log(validate('()()()([[]){}{([]{})}[]'));
+
+    var passVal = [];
+    function validate(test) {
+
+        console.log('*** validate open=0 closed=1: ' + test + " ***");
+
+        passVal = [];
+        //  var isValid = null;
+        var checkVal = '';
+        var hasErrors = [];
+        var xlen = test.length - 1;
+
+        for (var i = 0; i <= xlen; i++) {
+            var charIndex = test.indexOf(test[i]);
+            var charIs = matchTag(test[i]);
+            passVal.push(charIs);
+
+           // unique case first is closed
+            if (i === 0 && charIs === 1) {
+                 hasErrors.push(charIs);
+            }
+        }
+
+        var charIndex = test.indexOf(test[i]);
+        console.log("show pattern str: " + passVal.toString());
+         var  inValidPatternMatch = '0,0,1,1';
+         var seek = passVal.toString();
+         var charMatchInvalid= seek.indexOf(inValidPatternMatch);
+
+       //  console.log ("charMatchInvalid ", charMatchInvalid)
+        if (charMatchInvalid >0) {
+            hasErrors.push(charIs);            
+        }
+     //   console.log("~~stats: ", passVal, " passVal.length", passVal.length);
+        if (hasErrors.length > 0) {
+            console.log("~~~~~~ Found errors ;-( ;-( ;-(");
+        } else {
+             console.log("~~~~~ Success :-) :-) :-)");
+        }
+        // *******
+        return "*** done ***";
+    }
+
+    function matchTag(tag) {
+        var TAG_MAX = 2;
+        var tagsOpen = ['{', '[', '('];
+        var tagsClosed = ['}', ']', ')'];
+
+        for (var i = 0; i <= TAG_MAX; i++) {
+            if (tagsOpen[i] == tag) {
+                return 0;
+            }
+            if (tagsClosed[i] == tag) {
+                return 1;
+            }
+        }
+
+
+    } // -matchTag
+
+
+} // -challenge
+
+</script>
+
+</head>
+<body>
+<h1>Challenge 2</h1>
+<h2>Thanks for the challenge.</h2>
+<h3>Please view console for results. <br/>Best,<br/> M.Carbone</h3>
+</body>
+</html>
