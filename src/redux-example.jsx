@@ -2,44 +2,41 @@ var redux = require('redux');
 
 console.log('Starting redux example');
 
-var stateDefault = {
-    searchText: '',
-    payload: 'Anonymous',
-    showCompleted: false,
-    todos: []
+var reducer = (state = {payload: 'Anonymous'}, action) => {
+  // state = state || {name: 'Anonymous'};
 
-}
-
-var reducer = (state = stateDefault, action) => {
-    // state = state || {name: 'Anonymous'};
-
-   // console.log(" new action", action);
-
-    switch (action.type) {
-        case 'CHANGE_NAME':
-            return {
-                ...state,
-                payload: action.payload
-            };
-        default:
-            return state;
-
-    }
-
-
+  switch (action.type) {
+    case 'CHANGE_NAME':
+      return {
+        ...state,
+        payload: action.payload
+      };
+    default:
+      return state;
+  }
 };
+var store = redux.createStore(reducer, redux.compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
 
-var store = redux.createStore(reducer);
+// Subscribe to changes
+var unsubscribe = store.subscribe(() => {
+  var state = store.getState();
+
+  console.log('Name is', state.payload);
+  document.getElementById('app').innerHTML = state.payload;
+});
+// unsubscribe();
 
 var currentState = store.getState();
 console.log('currentState', currentState);
 
-var action = {
-    type: 'CHANGE_NAME',
-    payload: 'Matteo'
-};
+store.dispatch({
+  type: 'CHANGE_NAME',
+  payload: 'ciao!'
+});
 
-store.dispatch(action);
-
-
-console.log('action change', store.getState());
+store.dispatch({
+  type: 'CHANGE_NAME',
+  payload: 'bene?'
+});
