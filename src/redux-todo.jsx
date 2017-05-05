@@ -16,7 +16,7 @@ var reducer = (state = stateDefault, action) => {
    // console.log(" new action", action);
 
     switch (action.type) {
-        case 'CHANGE_NAME':
+        case 'CHANGE_SEARCH_TEXT':
             return {
                 ...state,
                 payload: action.payload
@@ -35,8 +35,8 @@ var currentState = store.getState();
 console.log('currentState', currentState);
 
 var action = {
-    type: 'CHANGE_NAME',
-    payload: 'Matteo'
+    type: 'CHANGE_SEARCH_TEXT',
+    payload: 'CIAO!'
 };
 
 store.dispatch(action);
