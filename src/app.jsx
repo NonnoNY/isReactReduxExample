@@ -13,6 +13,6 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-//require('./redux-example.jsx');
+require('./redux-example.jsx');
 
-require('./noHackMatt.jsx');
+//require('./noHackMatt.jsx');
