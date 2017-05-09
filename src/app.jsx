@@ -13,9 +13,9 @@ require ('style-loader!css-loader!sass-loader!appStyles');
   document.getElementById('app')
 );*/
 
-require('./redux-todo.jsx');
+//require('./redux-todo.jsx');
 
-//require('./redux-example.jsx');
+require('./redux-example.jsx');
 
 
 //require('./noHackMatt.jsx');
