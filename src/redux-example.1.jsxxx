@@ -134,13 +134,32 @@ var unsubscribe = store.subscribe(() => {
 var currentState = store.getState();
 console.log('currentState', currentState);
 store.dispatch(changeName('Matteo'));
-
 store.dispatch(addHobby('Walking'));
 store.dispatch(addHobby('Play Guitar'));
 store.dispatch(addHobby('BabySit Chase'));
 store.dispatch(removeHobby(3));
-
 store.dispatch(changeName('Bene!'));
+
+
+// store.dispatch({
+//   type: 'ADD_HOBBY',
+//   hobby: 'Walking'
+// });
+
+// store.dispatch({
+//   type: 'ADD_HOBBY',
+//   hobby: 'Play Guitar'
+// });
+
+// store.dispatch({
+//   type: 'ADD_HOBBY',
+//   hobby: 'BabySit Chase'
+// });
+
+// store.dispatch({
+//   type: 'REMOVE_HOBBY',
+//   id: 2
+// });
 
 store.dispatch(addMovie('Roge One', 'Star Wars'));
 store.dispatch(addMovie('Better Call Saul', 'Drama'));
@@ -148,3 +167,20 @@ store.dispatch(addMovie('House of Cards', 'Political Drama'));
 store.dispatch(removeMovie(2));
 
 
+// store.dispatch({
+//   type: 'ADD_MOVIE',
+//   title: 'Roge one',
+//   genre: 'Star wars'
+// });
+
+// store.dispatch({
+//   type: 'ADD_MOVIE',
+//   title: 'Better Call Saul',
+//   genre: 'Drama'
+// });
+
+
+// store.dispatch({
+//   type: 'REMOVE_MOVIE',
+//   id: 2
+// });
