@@ -1,1 +1,1 @@
-M.Carbone isReactBoilerplate
+Boilerplate React App
