@@ -4,7 +4,7 @@ var envFile = require('node-env-file');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-console.log("build env: ", process.env.NODE_ENV);
+//console.log("build env: ", process.env.NODE_ENV);
 
 
 try {
