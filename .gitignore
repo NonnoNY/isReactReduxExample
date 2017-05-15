@@ -6,6 +6,7 @@
 
 # dependencies
 /node_modules
+/public/bundle.js
 
 # IDEs and editors
 /.idea
