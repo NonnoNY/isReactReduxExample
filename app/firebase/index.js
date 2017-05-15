@@ -27,7 +27,7 @@ export var firebaseRef = firebase.database().ref();
 
 
 firebaseRef.child('app').update({
-    name: 'Mio Todo App',
+    name: 'zMio Todo App',
     version: '1.0.1'
 }).then(() => {
     // console.log("update successful!");
